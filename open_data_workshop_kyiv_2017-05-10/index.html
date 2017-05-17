@@ -1,0 +1,382 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Майстерня відкритих даних</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css">
+		<link rel="stylesheet" href="css/theme/style.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style media="screen">
+			.reveal section img {border: none;}
+
+			.reveal section {font-family: 'Ubuntu Condensed'; text-align: left;}
+
+			.reveal section a {color: black;}
+
+			.reveal section h3 {font-family: 'Ubuntu Condensed';text-align: center; font-weight: bold;}
+
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section style="text-align:left;">
+					<h2><b>Майстерня відкритих даних</b></h2>
+					<p>
+						Програма "Прозорість та підзвітність у державному управлінні та послугах"
+					</p>
+					<p>
+						10 травня, Київ
+					</p>
+					<img src="img/logo.png" alt="" />
+				</section>
+
+				<section>
+					<p>
+						<b>План воркшопу</b>
+					</p>
+					<hr>
+					<p>
+						Скрейпінг та робота з АРІ
+					</p>
+					<p>
+						Очищення та структурування даних
+					</p>
+					<p>
+						Аналіз та візуалізація даних
+					</p>
+				</section>
+
+				<section>
+					<h3 style="">Як ставити запитання та просити про допомогу?</h3>
+				</section>
+
+				<section>
+					<p>
+						<b><a href="https://stackoverflow.com/help/how-to-ask">Як шукати відповіді на питання?</a></b>
+					</p>
+					<hr>
+					<p>
+						Чітко та конкретно сформулюйте питання (опишіть проблему та інструментарій, який використовується для її вирішення)
+					</p>
+					<p>
+						Переконайтесь, що Google не знає відповіді на це питання
+					</p>
+					<p>
+						Знайдіть профільний форум (Stack Overflow, Google Groups, Quora)
+					</p>
+					<p>
+						Продивіться обговорення подібних до вашого питань
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<b><a href="http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example">Як просити про допомогу?</a></b>
+					</p>
+					<hr>
+					<p>
+						Пишіть просто і лаконічно
+					</p>
+					<p>
+						Зробіть свою проблему зрозумілою і відтворюваною для інших
+					</p>
+					<p>
+						Опишіть умови, за яких проблема виникає
+					</p>
+					<p>
+						Надайте набір даних та/або код, необхідний для відтворення помилки/проблеми
+					</p>
+				</section>
+
+				<section>
+					<h3>Скрейпінг</h3>
+				</section>
+
+				<section>
+					<p>
+						<b>Що таке скрейпінг?</b>
+					</p>
+					<hr>
+					<p>
+						Процес отримання даних з веб-сторінок
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<b><a href="https://www.w3schools.com/html/html_basic.asp">Структура веб-сторінки</a></b>
+					</p>
+					<hr>
+					<pre>
+						<code data-trim>
+							<div class="example">
+								<h4>Заголовок розділу</h4>
+								<p>Довільний текст</p>
+								<p>І ще абзац довільного тексту</p>
+								<h4>А тут ще один розділ</h4>
+								<p>І знову довільний текст</p>
+								<p>І знову</p>
+							</div>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<p>
+						<b>Структура веб-сторінки</b>
+					</p>
+					<hr>
+					<pre>
+						<code data-trim>
+							<div class="example">
+								<h4 class="title">Заголовок розділу</h4>
+								<p>Довільний текст</p>
+								<p>І ще абзац довільного тексту</p>
+								<h4>А тут ще один розділ</h4>
+								<p>І знову довільний текст</p>
+								<p>І знову</p>
+							</div>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<p>
+						<b><a href="https://www.w3schools.com/cssref/trysel.asp">Що таке селектори?</a></b>
+					</p>
+					<hr>
+					<p>
+						Теги, які дозволяють виділяти певні елементи на веб-сторінці
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<b>Як дізнаватись селектори?</b>
+					</p>
+					<hr>
+					<p>
+						<a href="http://selectorgadget.com/">Chrome::Selector Gadget</a>
+					</p>
+					<p>
+						<a href="http://getfirebug.com/">Firefox::Firebug</a>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<b>Інструменти для скрейпінгу</b>
+					</p>
+					<hr>
+					<p>
+						<a href="https://support.google.com/docs/answer/3093339?hl=en">Google Spreadsheets::ImportHTML()</a>
+					</p>
+					<p>
+						<a href="https://import.io/">Import.io</a>/<a href="https://magic.import.io/">Magic.Import.io</a>
+					</p>
+					<p>
+						R::XML, xml2, <a href="https://github.com/hadley/rvest">rvest</a>
+					</p>
+					<p>
+						Python::<a href="https://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a>, Scrapy
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<b>Давайте конкретний приклад</b>
+					</p>
+					<hr>
+					<a href="http://atu.minregion.gov.ua/"><img src="img/geoportal.png" alt="" /></a>
+
+				</section>
+
+				<section>
+					<p>
+						<b>Як отримати список регіонів за допомоги R</b>
+					</p>
+					<hr>
+					<pre>
+						<code data-trim>
+library(rvest)
+
+page <- html_session('http://atu.minregion.gov.ua/ua/ustriydo2015')
+
+regions <- page %>%
+  html_nodes('.text-left a:nth-child(1)') %>%
+  html_text() %>%
+  trimws()
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<p>
+						<b>Як отримати посилання на сторінки регіонів за допомоги R</b>
+					</p>
+					<hr>
+					<pre>
+						<code data-trim>
+library(rvest)
+
+page <- html_session('http://atu.minregion.gov.ua/ua/ustriydo2015')
+
+regions <- page %>%
+  html_nodes('.text-left a:nth-child(1)') %>%
+  html_attr('href')
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Робота з АРІ</h3>
+				</section>
+
+				<section>
+					<p>
+						<b>Що таке АРІ?</b>
+					</p>
+					<hr>
+					<p>
+						Інтерфейс прикладного програмування, набір функцій для отримання доступу до даних
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<b>Простий приклад АРІ</b>
+					</p>
+					<hr>
+					<a href="https://bank.gov.ua/control/uk/publish/article?art_id=38441973"><img src="img/api.png" alt="" /></a>
+				</section>
+
+				<section>
+					<p>
+						<b>Трохи складніший приклад АРІ</b>
+					</p>
+					<hr>
+					<a href="https://rada4you.org/help/data"><img src="img/rada4u.png" alt="" /></a>
+				</section>
+
+				<section>
+					<p>
+						<b>І ще трохи складніший приклад АРІ</b>
+					</p>
+					<hr>
+					<a href="http://atu.minregion.gov.ua/ua/karta#map=8//44.67704428333998//33.92350449999999&&layer=8906587737484582-v:1|op:1&&action=getInfo-doc:/api/format/region_template/ato.ato_level_territory_view/atoid/188/wkb_geometry,name_fullua,district_list,parent_list|panel:.map-obj-info-wrap"><img src="img/atu_api.png" alt="" /></a>
+				</section>
+
+				<section>
+					<p>
+						<b>Інструменти для роботи з АРІ</b>
+					</p>
+					<hr>
+					<p>
+						<a href="https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html">R::httr</a>
+					</p>
+					<p>
+						<a href="http://docs.python-requests.org/en/master/">Python::requests</a>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<b>Приклад запиту до АРІ Карти адмінустрою</b>
+					</p>
+					<hr>
+					<pre>
+						<code data-trim>
+library(httr)
+
+request=GET('http://atu.minregion.gov.ua/api/format/region_template/ato.ato_level_territory_view/atoid/27/wkb_geometry,name_fullua')
+
+response = content(request, as = 'parsed')
+
+coordinates <- response$data$wkb_geometry
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<p>
+						<b>Приклад запиту до АРІ Карти адмінустрою</b>
+					</p>
+					<hr>
+					<pre>
+						<code data-trim>
+library(httr)
+
+request=GET('http://atu.minregion.gov.ua/api/format/region_template/ato.ato_level_territory_view/atoid/27/wkb_geometry,name_fullua')
+
+response = content(request, as = 'parsed')
+
+coordinates <- response$data$wkb_geometry
+						</code>
+					</pre>
+				</section>
+
+				<!-- <section>
+					<p>
+						<b>Further reading</b>
+					</p>
+					<hr>
+					<p>
+						<a href="https://zapier.com/learn/apis/">An Introduction to APIs</a>
+					</p>
+				</section> -->
+
+				<section style="text-align:center">
+					<h3>Дякую за увагу! Питання?</h3>
+					<p>
+						Андрій Газін
+					</p>
+					<p>
+						fb.com/andriy.gazin
+					</p>
+					<p>
+						twitter.com/AndriyGazin
+					</p>
+				</section>
+
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			</script>
+	</body>
+</html>
